@@ -25,23 +25,29 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>client_w = 50;
+            <string>globalvar client_w;
+client_w = 50;
+globalvar newClient_x;
+globalvar new_Client_y;
 newClient_x = 5 - client_w;
 newClient_y = 0;
 globalvar clientWaitingList;
-clientWaitingList = 1;
+
+globalvar clientWaitingList_max;
+clientWaitingList_max = 11;
+clientWaitingList = 0;
 globalvar clientLine;
 globalvar WaitingLine_objs;
 
 c_waitingList_y = 180;
-
-for(var i = 0; i &lt; 10; i++)
+/*
+for(var i = 0; i &lt; 11; i++)
 {
     clientWaitingList = i+1;
     clientLine[clientWaitingList-1] = 5 + client_w * (clientWaitingList-1);
     WaitingLine_objs[clientWaitingList-1] = instance_create(clientLine[clientWaitingList-1], c_waitingList_y, obj_Client);    
 }
-
+*/
 
 </string>
           </argument>
@@ -65,14 +71,19 @@ for(var i = 0; i &lt; 10; i++)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/*frequency = 100;
+            <string>frequency = 2000;
+c_waitingList_y = 180;
+client_w = 50;
+newClient_x = 5 - client_w;
 
-if(random_range(0, 100) &gt; 90){    
-    clientWaitingList += 1;
-    clientLine[clientWaitingList-1] = newClient_x * (clientWaitingList-1);
-    instance_create(clientLine[clientWaitingList-1], newClient_y, obj_Client);    
-}
-*/
+if(clientWaitingList &lt; clientWaitingList_max){
+    if(random_range(0, frequency) &gt; frequency-10){    
+        clientWaitingList += 1;
+        clientLine[clientWaitingList-1] = 5 + client_w * (clientWaitingList-1);
+        WaitingLine_objs[clientWaitingList-1] = instance_create(clientLine[clientWaitingList-1], c_waitingList_y, obj_Client);     
+        show_debug_message("Client created : " + string(clientWaitingList-1));
+    }
+}    
 
 
 </string>

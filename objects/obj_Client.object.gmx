@@ -3,7 +3,7 @@
   <spriteName>sprite32_ICONS_client</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-1000</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -28,6 +28,7 @@
             <string>//RANDOMIZE CLIENT GOALS
 num = clientWaitingList;
 workout_num = 2; //ceil(random_range(0,2));
+on_floor = 0;
 show_debug_message("Client #" + string(num));
 show_debug_message(" Workout Num: " + string(workout_num));
 
@@ -63,7 +64,22 @@ show_debug_message("@ intensity : " + string(workout_intensity));
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>WaitingListUpdate(id);
+            <string>if(!on_floor)
+    WaitingListUpdate(id);
+    
+message = "Areas : ";
+
+for(var i = 0; i &lt; 2; i++){
+    if(workout_area[i] = 1)
+        message += "cardio ";
+    else if(workout_area[i] = 2)
+        message += "chest ";
+    else if(workout_area[i] = 3)
+        message += "legs ";
+    else if(workout_area[i] = 4)
+        message += "arm ";
+}    
+show_debug_message(message);
 </string>
           </argument>
         </arguments>

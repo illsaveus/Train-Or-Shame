@@ -10,7 +10,8 @@ if(grid_selected != -1){
         && grid_clicked.used == 0){
             show_debug_message("Play Sound : Correct");   
             grid_clicked.used = 1;
-            grid_clicked.used_by = selected_client.num;
+            grid_clicked.used_by = pop_Waitlist(selected_client.num);
+            
         } else if(grid_clicked.used == 1){
             show_debug_message("Grid Already In Use");   
             show_debug_message("Play Sound : Wrong");   

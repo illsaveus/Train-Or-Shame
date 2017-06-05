@@ -85,6 +85,7 @@
     <script>scripts\shop_menu.gml</script>
     <script>scripts\buy_confirm.gml</script>
     <script>scripts\move_client.gml</script>
+    <script>scripts\pop_Waitlist.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\UI_font</font>

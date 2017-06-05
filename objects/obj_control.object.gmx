@@ -29,6 +29,9 @@
 globalvar grid_selected;
 globalvar grid_clioked;
 globalvar grid_selected_id;
+globalvar clients_on_grid;
+globalvar clients_on_grid_num;
+clients_on_grid_num = 0;
 grid_clioked = 0;
 grid_selected = -1;
 selected_client = 0;
@@ -280,7 +283,9 @@ for (var i = 0; i &lt; instance_number(obj_GridPiece); i += 1){
     //draw clients on grids being used 
     if(grid[i].used == 1)
     {
-        draw_sprite(spr_client_onGrid, 1, grid[i].x, grid[i].y);
+        clients_on_grid[grid[i].used_by].x = grid[i].x;
+        clients_on_grid[grid[i].used_by].y = grid[i].y;
+//        draw_sprite(spr_client_onGrid, 1, grid[i].x, grid[i].y);
     }
     draw_text(grid[i].x, grid[i].y, string(i));
 }
@@ -288,6 +293,17 @@ for (var i = 0; i &lt; instance_number(obj_GridPiece); i += 1){
 draw_sprite(equipment[0], 1, grid[first].x, grid[first].y);
 //------------------------------
 
+
+//DRAW CLIENTS-----------------
+c_waitingList_y = 180;
+client_w = 50;
+newClient_x = 5 - client_w;
+for(var i = 0; i &lt; clientWaitingList; i++){
+    WaitingLine_objs[i].x =  clientLine[i];
+    WaitingLine_objs[i].y = c_waitingList_y;
+}
+
+//-----------------------------
 
 
 //MENU WINDOWS
