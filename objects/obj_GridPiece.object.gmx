@@ -27,6 +27,35 @@
             <kind>1</kind>
             <string>num = 0;
 upgrade = 0;
+grid_id = grid_num;
+grid_num++;
+used = 0;
+grid_selected_id = id;
+used_by = 0;
+show_debug_message("grid id#" + string(grid_id));
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="6" enumb="7">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>grid_selected = -1;
 </string>
           </argument>
         </arguments>
@@ -50,6 +79,14 @@ upgrade = 0;
           <argument>
             <kind>1</kind>
             <string>changeGridPiece(id);
+grid_selected_id = id;
+grid_selected = grid_id;
+grid_clicked = 1;
+
+if(used)
+    show_debug_message("Used by client #" + string(used_by));
+else
+    show_debug_message("Not used");
 </string>
           </argument>
         </arguments>

@@ -125,6 +125,7 @@ if(mouse_x > back_button_x && mouse_x < back_button_w
         show_debug_message("BACK");
         grid_choose_option = 0;
         menu_shop = 0;
+        grid_selected = 0;
     }
 }
 

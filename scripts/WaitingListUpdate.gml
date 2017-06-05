@@ -1,4 +1,5 @@
 //HIGHLIGHT SELECTED CLIENT - dehighlight the rest
+
 selected_client = argument0;
 spr_client_selected = sprite31_ICONS_client_selected;
 spr_client_deselect = sprite32_ICONS_client;

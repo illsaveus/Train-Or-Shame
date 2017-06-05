@@ -29,10 +29,10 @@
 y = -200;
 
 
-type[0] = sprite28_ICONS_client_type_chest;
-type[1] = sprite29_ICONS_client_type_cardio;
-type[2] = sprite30_ICONS_client_type_arms;
-type[3] = sprite27_ICONS_client_type_legs;
+type[0] = sprite29_ICONS_client_type_cardio;
+type[1] = sprite28_ICONS_client_type_chest;
+type[2] = sprite27_ICONS_client_type_legs;
+type[3] = sprite30_ICONS_client_type_arms;
 
 
 

@@ -11,6 +11,8 @@ if( money - price > 0)
     return 0;
 }
 
+grid_selected = 0;
+
 
 
 

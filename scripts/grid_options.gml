@@ -42,6 +42,7 @@ if(mouse_x > back_button_x && mouse_x < back_button_w
     if(mouse_check_button_pressed(mb_left)){
         show_debug_message("BACK");
         grid_choose_option = 0;
+        grid_selected = 0;
     }
 }
 
