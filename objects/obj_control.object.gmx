@@ -218,7 +218,7 @@ draw_sprite_ext(sprite47_UI_loadbar_fill, 1, ui_rating_x, ui_bars_y, ui_rate_bar
     
     
 //DRAW GYM GRID
-equipment[0] = sprite55_UI_gym_gridpiece;
+equipment[0] = sprite53_ICONS_equipment_add;
 equipment[1] = sprite34_ICONS_cardio_treadmill;
 equipment[2] = sprite33_ICONS_chest_bench;
 equipment[3] = sprite26_ICONS_legs_deadlift;
@@ -227,9 +227,32 @@ equipment[4] = sprite35_ICONS_arms_dumbbells;
 for (var i = 0; i &lt; instance_number(obj_GridPiece); i += 1){
    grid[i] = instance_find(obj_GridPiece,i);
 }
-for (var i = 0; i &lt; instance_number(obj_GridPiece); i += 1){
-    draw_sprite(equipment[gymGrid_arr[i]], 1, grid[i].x, grid[i].y);
+
+//move into a 2d grid array &amp; rearrange grid pieces in proper order
+var b = 0;
+var grid2d;
+var grid_w = 153;
+var grid_y = 140;
+for(var i = 0; i &lt; 5; i++){
+    for(var a = 0; a &lt; 4; a++){
+        grid2d[i, a] = grid[b];
+        grid2d[i, a].x = (a * grid_w);
+        grid2d[i, a].y = 228 +(i * grid_y);
+        b++;
+    }   
 }
+
+first = 0;
+for (var i = 0; i &lt; instance_number(obj_GridPiece); i += 1){
+    if(gymGrid_arr[i] == 0 &amp;&amp; first == 0)
+        first = i;
+    else if(gymGrid_arr[i] != 0){
+        draw_sprite(equipment[gymGrid_arr[i]], 1, grid[i].x, grid[i].y);
+    }
+    draw_text(grid[i].x, grid[i].y, string(i));
+}
+
+draw_sprite(equipment[0], 1, grid[first].x, grid[first].y);
 
 
     
