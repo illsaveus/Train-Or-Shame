@@ -33,7 +33,7 @@ clientWaitingList = 1;
 globalvar clientLine;
 globalvar WaitingLine_objs;
 
-c_waitingList_y = 190;
+c_waitingList_y = 180;
 
 for(var i = 0; i &lt; 10; i++)
 {

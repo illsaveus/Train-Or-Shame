@@ -21,6 +21,11 @@
       <sprite>sprites\sprite21_UI_GYM_option_button_move</sprite>
       <sprite>sprites\sprite19_UI_GYM_option_buttons</sprite>
       <sprite>sprites\sprite11_GYM_Buttons_Low_bg</sprite>
+      <sprite>sprites\sprite34_ICONS_cardio_treadmill</sprite>
+      <sprite>sprites\sprite33_ICONS_chest_bench</sprite>
+      <sprite>sprites\sprite26_ICONS_legs_deadlift</sprite>
+      <sprite>sprites\sprite35_ICONS_arms_dumbbells</sprite>
+      <sprite>sprites\sprite53_ICONS_equipment_add</sprite>
       <sprite>sprites\sprite22_UI_GYM_choose_option</sprite>
     </sprites>
     <sprites name="UI">
@@ -55,10 +60,6 @@
       <sprite>sprites\sprite41_SHOP_ICONS_prices</sprite>
     </sprites>
     <sprites name="ICONS">
-      <sprite>sprites\sprite35_ICONS_arms_dumbbells</sprite>
-      <sprite>sprites\sprite26_ICONS_legs_deadlift</sprite>
-      <sprite>sprites\sprite34_ICONS_cardio_treadmill</sprite>
-      <sprite>sprites\sprite33_ICONS_chest_bench</sprite>
       <sprite>sprites\sprite32_ICONS_client</sprite>
       <sprite>sprites\sprite31_ICONS_client_selected</sprite>
       <sprite>sprites\sprite28_ICONS_client_type_chest</sprite>
@@ -68,6 +69,8 @@
       <sprite>sprites\sprite25_ICONS_workout_types_pointer</sprite>
     </sprites>
     <sprite>sprites\sprite36_CLIST_BG</sprite>
+    <sprite>sprites\sprite52</sprite>
+    <sprite>sprites\sprite55_UI_gym_gridpiece</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -79,6 +82,7 @@
     <font>fonts\UI_font</font>
   </fonts>
   <objects name="objects">
+    <object>objects\obj_FloatingIcons</object>
     <object>objects\obj_control</object>
     <object>objects\obj_Client_control</object>
     <objects name="GYM">
@@ -92,7 +96,7 @@
     </objects>
     <object>objects\obj_Ads</object>
     <object>objects\obj_Client</object>
-    <object>objects\obj_FloatingIcons</object>
+    <object>objects\obj_GridPiece</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>

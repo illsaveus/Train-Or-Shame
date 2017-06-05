@@ -28,16 +28,16 @@
             <string>//RANDOMIZE CLIENT GOALS
 num = clientWaitingList;
 workout_num = 2; //ceil(random_range(0,2));
-//show_debug_message("Client #" + string(num));
-//show_debug_message(" Workout Num: " + string(workout_num));
+show_debug_message("Client #" + string(num));
+show_debug_message(" Workout Num: " + string(workout_num));
 
 for(var i = 0; i &lt; workout_num; i++){
     workout_area[i] = ceil(random_range(0,4));
-//    show_debug_message(string(i) + ": " + string(workout_area[i]));
+    show_debug_message(string(i) + ": " + string(workout_area[i]));
 }
 
 workout_intensity = ceil(random_range(1,10));
-//show_debug_message("@ intensity : " + string(workout_intensity));
+show_debug_message("@ intensity : " + string(workout_intensity));
 
 
 
