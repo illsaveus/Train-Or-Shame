@@ -10,4 +10,3 @@ if(grid[selected.num].upgrade == 1)
 
 
 
-

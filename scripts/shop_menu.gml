@@ -29,10 +29,14 @@ if(mouse_x > shop_grid_x && mouse_x < shop_grid_x + x_buff
 && mouse_y > shop_grid_y && mouse_y < shop_grid_y + y_buff){
     if(mouse_check_button_pressed(mb_left)){
         show_message("buy TREADMILL?");
-        buy_confirm(item);
-        gymGrid_arr[first] = item+1;
-        grid[first].upgrade = 0;
-        first=0;
+
+        if(buy_confirm(item)==1)
+        {
+            gymGrid_arr[first] = item+1;
+            grid[first].upgrade = 0;
+            first=0;
+        }
+        
         grid_choose_option = 0;
         menu_shop = 0;
 //        gymGrid_arr[first+1].upgrade = 1;
@@ -49,10 +53,13 @@ if(mouse_x > shop_grid_x && mouse_x < shop_grid_x + x_buff
 && mouse_y > shop_grid_y && mouse_y < shop_grid_y + y_buff){
     if(mouse_check_button_pressed(mb_left)){
         show_message("buy BENCH?");
-        buy_confirm(item);
-        gymGrid_arr[first] = item+1;
-        grid[first].upgrade = 0;
-        first=0;
+        if(buy_confirm(item)==1)
+        {
+            gymGrid_arr[first] = item+1;
+            grid[first].upgrade = 0;
+            first=0;
+        }
+        
         grid_choose_option = 0;
         menu_shop = 0;
     }
@@ -69,10 +76,13 @@ if(mouse_x > shop_grid_x && mouse_x < shop_grid_x + x_buff
 && mouse_y > shop_grid_y && mouse_y < shop_grid_y + y_buff){
     if(mouse_check_button_pressed(mb_left)){
         show_message("buy DEADLIFT?");
-        buy_confirm(item);
-        gymGrid_arr[first] = item+1;
-        grid[first].upgrade = 0;
-        first=0;
+        if(buy_confirm(item)==1)
+        {
+            gymGrid_arr[first] = item+1;
+            grid[first].upgrade = 0;
+            first=0;
+        }
+        
         grid_choose_option = 0;
         menu_shop = 0;
     }
@@ -89,10 +99,12 @@ if(mouse_x > shop_grid_x && mouse_x < shop_grid_x + x_buff
 && mouse_y > shop_grid_y && mouse_y < shop_grid_y + y_buff){
     if(mouse_check_button_pressed(mb_left)){
         show_message("buy DUMBBELL?");
-        buy_confirm(item);
-        gymGrid_arr[first] = item+1;
-        grid[first].upgrade = 0;
-        first=0;
+        if(buy_confirm(item)==1)
+        {
+            gymGrid_arr[first] = item+1;
+            grid[first].upgrade = 0;
+            first=0;            
+        }
         grid_choose_option = 0;
         menu_shop = 0;
 
@@ -115,7 +127,6 @@ if(mouse_x > back_button_x && mouse_x < back_button_w
         menu_shop = 0;
     }
 }
-
 
 
 

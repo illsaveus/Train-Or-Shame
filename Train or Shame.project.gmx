@@ -89,11 +89,11 @@
   </fonts>
   <objects name="objects">
     <object>objects\obj_FloatingIcons</object>
+    <object>objects\obj_control</object>
+    <object>objects\obj_Client_control</object>
     <objects name="shop">
       <object>objects\obj_buy_treadmill</object>
     </objects>
-    <object>objects\obj_control</object>
-    <object>objects\obj_Client_control</object>
     <objects name="GYM">
       <object>objects\obj_UI_Gym_top</object>
       <object>objects\obj_UI_Gym_grid</object>
