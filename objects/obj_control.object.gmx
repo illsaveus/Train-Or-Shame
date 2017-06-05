@@ -60,8 +60,11 @@ months[9] = "OCT";
 months[10] = "NOV";
 months[11] = "DEC";
 
+globalvar money;
 money = 200;
+globalvar rating;
 rating = 0;
+globalvar rent;
 rent = 800;
 day_num = 0;
 month_num = 0;
@@ -142,9 +145,6 @@ if(dayTimer &gt; 0){
     day_txt = weekDay[day_num];
     
 }
-
-money += 50;
-rating += 5;
 
 showDayTimer = ceil(dayTimer);
 </string>
@@ -228,7 +228,7 @@ draw_sprite_ext(sprite47_UI_loadbar_fill, 1, ui_rating_x, ui_bars_y, ui_rate_bar
     
     
     
-//DRAW GYM GRID
+//DRAW GYM GRID-------------------------------------
 equipment[0] = sprite53_ICONS_equipment_add;
 equipment[1] = sprite34_ICONS_cardio_treadmill;
 equipment[2] = sprite33_ICONS_chest_bench;
@@ -257,12 +257,13 @@ for(var i = 0; i &lt; 5; i++){
 
 
 
+globalvar first;
 first = 0;
 globalvar gymGrid_arr;
 for (var i = 0; i &lt; instance_number(obj_GridPiece); i += 1){
     if(gymGrid_arr[i] == 0 &amp;&amp; first == 0){
         first = i;
-        grid[i].upgrade = 1;
+        grid[first].upgrade = 1;
     } else if(gymGrid_arr[i] != 0){
         draw_sprite(equipment[gymGrid_arr[i]], 1, grid[i].x, grid[i].y);
     }
@@ -270,9 +271,9 @@ for (var i = 0; i &lt; instance_number(obj_GridPiece); i += 1){
 }
 
 draw_sprite(equipment[0], 1, grid[first].x, grid[first].y);
+//------------------------------
 
-
-    
+//MENU WINDOWS
 
 if(menu_shop == 1){
     shop_menu(grid[first]);
