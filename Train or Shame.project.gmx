@@ -17,16 +17,18 @@
         <sprite>sprites\sprite8_GYM_Buttons_Low_OPTIONS</sprite>
         <sprite>sprites\sprite7_GYM_Buttons_Low_SHOP</sprite>
       </sprites>
-      <sprite>sprites\sprite20_UI_GYM_option_button_upgrade</sprite>
-      <sprite>sprites\sprite21_UI_GYM_option_button_move</sprite>
-      <sprite>sprites\sprite19_UI_GYM_option_buttons</sprite>
+      <sprites name="grid options">
+        <sprite>sprites\sprite21_UI_GYM_option_button_move</sprite>
+        <sprite>sprites\sprite19_UI_GYM_option_buttons</sprite>
+        <sprite>sprites\sprite20_UI_GYM_option_button_upgrade</sprite>
+        <sprite>sprites\sprite22_UI_GYM_choose_option</sprite>
+      </sprites>
       <sprite>sprites\sprite11_GYM_Buttons_Low_bg</sprite>
       <sprite>sprites\sprite34_ICONS_cardio_treadmill</sprite>
       <sprite>sprites\sprite33_ICONS_chest_bench</sprite>
       <sprite>sprites\sprite26_ICONS_legs_deadlift</sprite>
       <sprite>sprites\sprite35_ICONS_arms_dumbbells</sprite>
       <sprite>sprites\sprite53_ICONS_equipment_add</sprite>
-      <sprite>sprites\sprite22_UI_GYM_choose_option</sprite>
     </sprites>
     <sprites name="UI">
       <sprite>sprites\sprite18_UI_menu_screen</sprite>
@@ -44,15 +46,15 @@
       <sprite>sprites\sprite14_BIZ_members_countbar</sprite>
     </sprites>
     <sprites name="SHOP">
-      <sprite>sprites\sprite0_SHOP_ICONS_equipment_arms_dumbbell</sprite>
       <sprite>sprites\sprite3_SHOP_bg</sprite>
       <sprite>sprites\sprite2_SHOP_CONFIRM</sprite>
-      <sprite>sprites\sprite40_SHOP_ICONS_types_arms</sprite>
       <sprite>sprites\sprite44_SHOP_ICONS_equipment_chest_bench</sprite>
+      <sprite>sprites\sprite0_SHOP_ICONS_equipment_arms_dumbbell</sprite>
       <sprite>sprites\sprite42_SHOP_ICONS_equipment_legs_deadlift</sprite>
       <sprite>sprites\sprite43_SHOP_ICONS_equipment_legs</sprite>
       <sprite>sprites\sprite46_SHOP_ICONS_equipment_cardio_treadmill</sprite>
       <sprite>sprites\sprite38_SHOP_ICONS_types_chest</sprite>
+      <sprite>sprites\sprite40_SHOP_ICONS_types_arms</sprite>
       <sprite>sprites\sprite37_SHOP_ICONS_types_legs</sprite>
       <sprite>sprites\sprite45_SHOP_ICONS_equipment_chest</sprite>
       <sprite>sprites\sprite39_SHOP_ICONS_types_cardio</sprite>
@@ -77,12 +79,18 @@
   <scripts name="scripts">
     <script>scripts\WaitingListUpdate.gml</script>
     <script>scripts\drawFloatingIcon.gml</script>
+    <script>scripts\changeGridPiece.gml</script>
+    <script>scripts\grid_options.gml</script>
+    <script>scripts\shop_menu.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\UI_font</font>
   </fonts>
   <objects name="objects">
     <object>objects\obj_FloatingIcons</object>
+    <objects name="shop">
+      <object>objects\obj_buy_treadmill</object>
+    </objects>
     <object>objects\obj_control</object>
     <object>objects\obj_Client_control</object>
     <objects name="GYM">
