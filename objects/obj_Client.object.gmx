@@ -104,8 +104,11 @@ if(on_floor = 1){
         show_debug_message(name + " DONE with" + string(current_workout));            
         current_workout = 88;
         workout_timer = workout_timeMax;
-            
-        push_Waitlist(id);
+        
+        if(finished_workout[0] == 1 &amp;&amp; finished_workout[1] == 1)
+            remove_client(id);
+        else
+            push_Waitlist(id);
 
         
     }   
@@ -158,6 +161,8 @@ client_win = 1;
             <kind>1</kind>
             <string>if(!on_floor)
     WaitingListUpdate(id);
+else
+    selected_client = id;
 gen = "neither?";
 if(gender = 0)
     gen = "female";

@@ -89,6 +89,7 @@
     <script>scripts\pop_Waitlist.gml</script>
     <script>scripts\random_name.gml</script>
     <script>scripts\push_Waitlist.gml</script>
+    <script>scripts\remove_client.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\UI_font</font>

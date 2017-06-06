@@ -32,5 +32,10 @@ obj_FloatingIcons.y = -100;
         obj_FloatingIcons.w_fin_2 = 1;
     }
     
+    if(selected_client.finished_workout[0] == 0)
+        obj_FloatingIcons.w_fin_1 = 0;
+    if(selected_client.finished_workout[1] == 0)
+        obj_FloatingIcons.w_fin_2 = 0;    
+    
 }
 
