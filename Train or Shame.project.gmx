@@ -78,6 +78,7 @@
   <backgrounds name="background"/>
   <paths name="paths"/>
   <scripts name="scripts">
+    <script>scripts\draw_client_window.gml</script>
     <script>scripts\WaitingListUpdate.gml</script>
     <script>scripts\drawFloatingIcon.gml</script>
     <script>scripts\changeGridPiece.gml</script>

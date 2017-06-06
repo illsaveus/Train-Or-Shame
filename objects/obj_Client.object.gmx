@@ -29,11 +29,12 @@
 num = clientWaitingList;
 workout_num = 2; //ceil(random_range(0,2));
 on_floor = 0;
-motivation = ceil(random_range(0, 5));
+motivation = round(random_range(0, 5));
 intensity = motivation * 6;
 gender = round(random_range(0, 1));
-age = ceil(random_range(0, 99));
-workout_timeMax = ceil(random_range(0, intensity));
+age = ceil(random_range(18, 99));
+workout_timeMax = round(random_range(0, intensity));
+goal = round(random_range(0, 150));
 
 name = random_name(gender);
 
@@ -51,6 +52,30 @@ show_debug_message("@ intensity : " + string(workout_intensity));
 
 
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="6" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>selected_client = id;
+client_win = 1;
 </string>
           </argument>
         </arguments>
@@ -81,7 +106,7 @@ if(gender = 0)
 else if(gender = 1)
     gen = "male";
 
-message = gen + " " + name + " is doing areas : ";
+message = gen + " " + name + " age " + string(age) + " is doing areas : ";
 
 for(var i = 0; i &lt; 2; i++){
     if(workout_area[i] = 1)
@@ -93,6 +118,8 @@ for(var i = 0; i &lt; 2; i++){
     else if(workout_area[i] = 4)
         message += "arm ";
 }    
+show_debug_message(message);
+message = "Motivation : " + string(motivation) + " with intensity of : " + string(intensity) + " equsls " + string(workout_timeMax) + " seconds.";
 show_debug_message(message);
 </string>
           </argument>

@@ -25,7 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>globalvar selected_client;
+            <string>globalvar client_win;
+client_win = 0;
+globalvar selected_client;
 globalvar grid_selected;
 globalvar grid_clioked;
 globalvar grid_selected_id;
@@ -308,21 +310,23 @@ for(var i = 0; i &lt; clientWaitingList; i++){
 
 //MENU WINDOWS
 
-if(menu_shop == 1){
+if(menu_shop == 1 &amp;&amp; client_win == 0){
     shop_menu(grid[first]);
     grid_choose_option = 0;
 }
-if(grid_choose_option==1 &amp;&amp; selected_client == 0)
+if(grid_choose_option==1 &amp;&amp; selected_client == 0 &amp;&amp; client_win == 0)
 {
-    
     grid_options(grid[first]);
 //    draw_sprite_ext(sprite18_UI_menu_screen , 1, 0, 0, 1.0, 1.0, 0, c_white, 0.50);
 }
 
-if(selected_client != 0){
+if(selected_client != 0 &amp;&amp; client_win == 0){
     move_client(grid_selected_id);
 }
 
+if(client_win == 1){
+    draw_client_window()
+}
     
 </string>
           </argument>
