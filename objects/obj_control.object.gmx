@@ -41,9 +41,10 @@ globalvar grid_choose_option;
 globalvar menu_shop;
 menu_shop = 0;
 grid_choose_option = 0;
-
+globalvar total_served;
+total_served = 0;
 minutes = 60;
-dayLength = minutes * 1;
+dayLength = minutes/2;
 dayTimer = dayLength;
 showDayTimer = ceil(dayTimer);
 debug_dayTimeTxt = string(showDayTimer);

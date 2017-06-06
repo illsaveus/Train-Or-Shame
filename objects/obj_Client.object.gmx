@@ -37,10 +37,11 @@ workout_timeMax = 2;
 //workout_timeMax = round(random_range(0, intensity));
 workout_timer = workout_timeMax;
 goal = round(random_range(0, 150));
-payment = round(random_range(3, 10));
+payment = round(random_range(10, 25));
 finished_workout[0] = 0;
 finished_workout[1] = 0;
 current_workout = 88;
+
 
 name = random_name(gender);
 

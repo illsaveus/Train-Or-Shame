@@ -14,7 +14,10 @@ for(var i = removing.num; i < clients_on_grid_num-1; i++){
 clients_on_grid[clients_on_grid_num-1] = 0;
 clients_on_grid_num--;
 
-show_debug_message(removing.name + " is done with their workout");
+money += removing.payment;
+total_served++;
+
+show_debug_message(removing.name + " is done with their workout. +$" + string(removing.payment));
 
 with(removing)
 {
