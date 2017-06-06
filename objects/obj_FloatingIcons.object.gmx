@@ -27,7 +27,8 @@
             <kind>1</kind>
             <string>x = -200;
 y = -200;
-
+w_fin_1 = 0;
+w_fin_2 = 0;
 
 type[0] = sprite29_ICONS_client_type_cardio;
 type[1] = sprite28_ICONS_client_type_chest;
@@ -87,6 +88,19 @@ draw_sprite(draw_workout[0], 1, floating_icon_x, floating_icon_y);
 draw_sprite(draw_workout[1], 1, floating_icon_x+51, floating_icon_y);
 
 
+
+
+
+
+
+    if(w_fin_1 == 1){
+        draw_text(floating_icon_x+15, floating_icon_y, "X");
+//        show_debug_message("workout 1 finished");
+    } 
+    if(w_fin_2 == 1){
+        draw_text(floating_icon_x+65, floating_icon_y, "X");
+//        show_debug_message("workout 2 finished");
+    }
 </string>
           </argument>
         </arguments>

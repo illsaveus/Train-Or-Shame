@@ -9,6 +9,6 @@ for(var i = pop_client; i < clientWaitingList-1; i++){
 }
 
 clientWaitingList--;
-show_debug_message("Clients down to : " + string(clientWaitingList));
+show_debug_message("Waitlist down to : " + string(clientWaitingList));
 WaitingListUpdate(0);
 return clients_on_grid_num-1;

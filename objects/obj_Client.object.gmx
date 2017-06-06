@@ -33,8 +33,14 @@ motivation = round(random_range(0, 5));
 intensity = motivation * 6;
 gender = round(random_range(0, 1));
 age = ceil(random_range(18, 99));
-workout_timeMax = round(random_range(0, intensity));
+workout_timeMax = 2;
+//workout_timeMax = round(random_range(0, intensity));
+workout_timer = workout_timeMax;
 goal = round(random_range(0, 150));
+payment = round(random_range(3, 10));
+finished_workout[0] = 0;
+finished_workout[1] = 0;
+current_workout = 88;
 
 name = random_name(gender);
 
@@ -42,8 +48,13 @@ name = random_name(gender);
 show_debug_message("Client #" + string(num));
 show_debug_message(" Workout Num: " + string(workout_num));
 
+workout_area[0] = 88;
+workout_area[1] = 88;
 for(var i = 0; i &lt; workout_num; i++){
+    
     workout_area[i] = ceil(random_range(0,4));
+    if(workout_area[1] == workout_area[0])
+        i--;
     show_debug_message(string(i) + ": " + string(workout_area[i]));
 }
 
@@ -52,6 +63,53 @@ show_debug_message("@ intensity : " + string(workout_intensity));
 
 
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>
+if(on_floor = 1){
+    workout_timer = workout_timer - delta_time/1000000; // in seconds
+    
+//    show_debug_message(string(workout_timer));
+    
+    if(workout_timer &lt;= 0){
+        finished_workout[current_workout] = 0;
+        on_floor = 0;
+        
+        if(current_workout == 0)
+            finished_workout[0] = 1;
+        else if(current_workout == 1)
+            finished_workout[1] = 1;
+
+            
+        show_debug_message(name + " DONE with" + string(current_workout));            
+        current_workout = 88;
+        workout_timer = workout_timeMax;
+            
+        push_Waitlist(id);
+
+        
+    }   
+}
 </string>
           </argument>
         </arguments>
