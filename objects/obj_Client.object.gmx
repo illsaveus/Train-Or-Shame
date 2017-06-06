@@ -29,6 +29,15 @@
 num = clientWaitingList;
 workout_num = 2; //ceil(random_range(0,2));
 on_floor = 0;
+motivation = ceil(random_range(0, 5));
+intensity = motivation * 6;
+gender = round(random_range(0, 1));
+age = ceil(random_range(0, 99));
+workout_timeMax = ceil(random_range(0, intensity));
+
+name = random_name(gender);
+
+
 show_debug_message("Client #" + string(num));
 show_debug_message(" Workout Num: " + string(workout_num));
 
@@ -66,8 +75,13 @@ show_debug_message("@ intensity : " + string(workout_intensity));
             <kind>1</kind>
             <string>if(!on_floor)
     WaitingListUpdate(id);
-    
-message = "Areas : ";
+gen = "neither?";
+if(gender = 0)
+    gen = "female";
+else if(gender = 1)
+    gen = "male";
+
+message = gen + " " + name + " is doing areas : ";
 
 for(var i = 0; i &lt; 2; i++){
     if(workout_area[i] = 1)

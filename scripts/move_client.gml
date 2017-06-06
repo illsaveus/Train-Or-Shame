@@ -23,4 +23,3 @@ if(grid_selected != -1){
     grid_selected = -1;        
 }
 
-
