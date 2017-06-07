@@ -25,26 +25,29 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>globalvar client_win;
+            <string>globalvar selected_client;
+selected_client = 0;
+globalvar total_served;
+total_served = 0;
+globalvar client_win;
 client_win = 0;
 globalvar selected_client;
-globalvar grid_selected;
-globalvar grid_clioked;
+
 globalvar grid_selected_id;
-globalvar clients_on_grid;
-globalvar clients_on_grid_num;
-clients_on_grid_num = 0;
-grid_clioked = 0;
-grid_selected = -1;
-selected_client = 0;
+globalvar moving_client;
+moving_client = 0;
+globalvar client_objs;
+client_objs[0] = 88;
+globalvar client_counter;
+client_counter = 0;
+
 globalvar grid_choose_option;
 globalvar menu_shop;
 menu_shop = 0;
 grid_choose_option = 0;
-globalvar total_served;
-total_served = 0;
+
 minutes = 60;
-dayLength = minutes/2;
+dayLength = minutes * 1;
 dayTimer = dayLength;
 showDayTimer = ceil(dayTimer);
 debug_dayTimeTxt = string(showDayTimer);
@@ -74,7 +77,7 @@ months[10] = "NOV";
 months[11] = "DEC";
 
 globalvar money;
-money = 200;
+money = 500;
 globalvar rating;
 rating = 0;
 globalvar rent;
@@ -88,8 +91,6 @@ week_txt = "WEEK " + string(week_num);
 day_txt = weekDay[day_num];
 rent_txt = "RENT";
 rating_txt = "RATING";
-globalvar grid_num;
-grid_num = 0;
 
 for(var i = 0; i &lt; 20; i++){
     gymGrid_arr[i] = 0;
@@ -162,7 +163,6 @@ if(dayTimer &gt; 0){
 }
 
 showDayTimer = ceil(dayTimer);
-
 </string>
           </argument>
         </arguments>
@@ -283,53 +283,75 @@ for (var i = 0; i &lt; instance_number(obj_GridPiece); i += 1){
     } else if(gymGrid_arr[i] != 0){
         draw_sprite(equipment[gymGrid_arr[i]], 1, grid[i].x, grid[i].y);
     }
-    
-    //draw clients on grids being used 
-    if(grid[i].used == 1)
-    {
-        clients_on_grid[grid[i].used_by].x = grid[i].x;
-        clients_on_grid[grid[i].used_by].y = grid[i].y;
-//        draw_sprite(spr_client_onGrid, 1, grid[i].x, grid[i].y);
-    }
-    draw_text(grid[i].x, grid[i].y, string(i));
+    grid[i].num = i;
+    draw_text(grid[i].x, grid[i].y, string(grid[i].num ));
 }
 
 draw_sprite(equipment[0], 1, grid[first].x, grid[first].y);
 //------------------------------
 
-
-//DRAW CLIENTS-----------------
-c_waitingList_y = 180;
-client_w = 50;
-newClient_x = 5 - client_w;
-for(var i = 0; i &lt; clientWaitingList; i++){
-    WaitingLine_objs[i].x =  clientLine[i];
-    WaitingLine_objs[i].y = c_waitingList_y;
+//DRAW CLIENTS
+client_counter = 0;
+wait_count = 0;
+with(obj_Client)
+{
+    //draw waitlist
+    if(on_floor == 0)
+    {
+        x = 5 + 50 * wait_count;
+        y = 180;
+        wait_count++;
+    } else {
+        x = using.x;
+        y = using.y;
+    
+    }
+    
+    num = client_counter;
+    client_counter++;
+    sprite_index = sprite32_ICONS_client;
+    if(selected == 1)
+    {
+        obj_FloatingIcons.draw_workout[0] = workout_area[0]-1;
+        obj_FloatingIcons.draw_workout[1] = workout_area[1]-1;
+        obj_FloatingIcons.x = x;
+        obj_FloatingIcons.y = y;
+        sprite_index = sprite31_ICONS_client_selected;
+        
+        floating_icon_x = x - 25;
+        floating_icon_y = y - 60;
+        
+        if(finished_workout[0] == 1)
+            draw_text(floating_icon_x+15, floating_icon_y, "X");
+        if(finished_workout[1] == 1)
+            draw_text(floating_icon_x+65, floating_icon_y, "X");
+    }
+    if(selected_client == 0)
+        obj_FloatingIcons.x = -88;
+    
 }
 
-//-----------------------------
 
+
+
+//---------------------------------
 
 //MENU WINDOWS
 
 if(menu_shop == 1 &amp;&amp; client_win == 0){
     shop_menu(grid[first]);
-    grid_choose_option = 0;
+    grid_choose_option =0;
 }
 if(grid_choose_option==1 &amp;&amp; selected_client == 0 &amp;&amp; client_win == 0)
 {
+    
     grid_options(grid[first]);
 //    draw_sprite_ext(sprite18_UI_menu_screen , 1, 0, 0, 1.0, 1.0, 0, c_white, 0.50);
 }
 
-if(selected_client != 0 &amp;&amp; client_win == 0){
-    move_client(grid_selected_id);
-}
-
 if(client_win == 1){
     draw_client_window()
-}
-    
+} 
 </string>
           </argument>
         </arguments>

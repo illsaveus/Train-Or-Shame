@@ -1,7 +1,7 @@
 grid_clicked = argument0;
 
 
-if(grid_selected != -1){
+if(grid_selected != -1 && selected_client != 0){
     show_debug_message("You clicked grid #" + string(grid_selected));
             
         if(gymGrid_arr[grid_selected] == selected_client.workout_area[0]
@@ -12,6 +12,8 @@ if(grid_selected != -1){
             
             grid_clicked.used = 1;
             grid_clicked.used_by = pop_Waitlist(selected_client.num);
+
+
             
         } else if(gymGrid_arr[grid_selected] == selected_client.workout_area[1]
           && selected_client.finished_workout[1] = 0 && grid_clicked.used == 0 ){
@@ -21,6 +23,9 @@ if(grid_selected != -1){
             
             grid_clicked.used = 1;
             grid_clicked.used_by = pop_Waitlist(selected_client.num);
+
+
+            
         } else if(grid_clicked.used == 1){
             show_debug_message("Grid Already In Use");   
             show_debug_message("Play Sound : Wrong");   
@@ -46,7 +51,6 @@ if(grid_selected != -1){
         
 
     
-        
+    
     grid_selected = -1;        
 }
-

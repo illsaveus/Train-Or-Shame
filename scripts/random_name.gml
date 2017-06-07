@@ -41,7 +41,7 @@ if(selected_gender = 0){
     female_nm[5] = "ADELE";
     selected = round(random_range(0, 4));
     
-    show_debug_message("female name # " + string(selected));
+    
     
     return female_nm[selected] + last_nm;
 
@@ -70,12 +70,10 @@ if(selected_gender = 0){
     male_nm[21] = "GAIL";
     male_nm[22] = "GERRY";
     selected = round(random_range(0, 22));
-    show_debug_message("male name # " + string(selected));
+    
     
     return male_nm[selected] + last_nm;
 }
-
-
 
 
 

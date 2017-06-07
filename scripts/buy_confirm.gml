@@ -6,12 +6,10 @@ if( money - price > 0)
 {
     money -= price;
     return 1;
-} else {
+}else
+{
     show_message("Make more money $$$");
     return 0;
 }
-
-grid_selected = 0;
-
-
+show_debug_message("-$" + string(price));
 

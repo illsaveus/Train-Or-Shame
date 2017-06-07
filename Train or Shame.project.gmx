@@ -64,7 +64,6 @@
     <sprites name="ICONS">
       <sprite>sprites\sprite32_ICONS_client</sprite>
       <sprite>sprites\sprite31_ICONS_client_selected</sprite>
-      <sprite>sprites\spr_client_onGrid</sprite>
       <sprite>sprites\sprite28_ICONS_client_type_chest</sprite>
       <sprite>sprites\sprite29_ICONS_client_type_cardio</sprite>
       <sprite>sprites\sprite27_ICONS_client_type_legs</sprite>
@@ -78,26 +77,23 @@
   <backgrounds name="background"/>
   <paths name="paths"/>
   <scripts name="scripts">
-    <script>scripts\draw_client_window.gml</script>
     <script>scripts\WaitingListUpdate.gml</script>
     <script>scripts\drawFloatingIcon.gml</script>
     <script>scripts\changeGridPiece.gml</script>
     <script>scripts\grid_options.gml</script>
     <script>scripts\shop_menu.gml</script>
     <script>scripts\buy_confirm.gml</script>
-    <script>scripts\move_client.gml</script>
-    <script>scripts\pop_Waitlist.gml</script>
-    <script>scripts\random_name.gml</script>
-    <script>scripts\push_Waitlist.gml</script>
     <script>scripts\remove_client.gml</script>
+    <script>scripts\draw_client_window.gml</script>
+    <script>scripts\random_name.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\UI_font</font>
   </fonts>
   <objects name="objects">
-    <object>objects\obj_FloatingIcons</object>
     <object>objects\obj_control</object>
     <object>objects\obj_Client_control</object>
+    <object>objects\obj_FloatingIcons</object>
     <objects name="shop">
       <object>objects\obj_buy_treadmill</object>
     </objects>

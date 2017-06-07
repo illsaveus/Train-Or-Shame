@@ -29,12 +29,12 @@ if(mouse_x > shop_grid_x && mouse_x < shop_grid_x + x_buff
 && mouse_y > shop_grid_y && mouse_y < shop_grid_y + y_buff){
     if(mouse_check_button_pressed(mb_left)){
         show_message("buy TREADMILL?");
-
         if(buy_confirm(item)==1)
         {
             gymGrid_arr[first] = item+1;
             grid[first].upgrade = 0;
             first=0;
+            
         }
         
         grid_choose_option = 0;
@@ -60,8 +60,9 @@ if(mouse_x > shop_grid_x && mouse_x < shop_grid_x + x_buff
             first=0;
         }
         
-        grid_choose_option = 0;
-        menu_shop = 0;
+        
+            grid_choose_option = 0;
+            menu_shop = 0;
     }
 }
 
@@ -81,10 +82,11 @@ if(mouse_x > shop_grid_x && mouse_x < shop_grid_x + x_buff
             gymGrid_arr[first] = item+1;
             grid[first].upgrade = 0;
             first=0;
+            
         }
         
         grid_choose_option = 0;
-        menu_shop = 0;
+            menu_shop = 0;
     }
 }
 
@@ -103,11 +105,13 @@ if(mouse_x > shop_grid_x && mouse_x < shop_grid_x + x_buff
         {
             gymGrid_arr[first] = item+1;
             grid[first].upgrade = 0;
-            first=0;            
+            first=0;
+            grid_choose_option = 0;
+            menu_shop = 0;
         }
-        grid_choose_option = 0;
-        menu_shop = 0;
-
+        
+            grid_choose_option = 0;
+            menu_shop = 0;
     }
 }
 
@@ -125,8 +129,8 @@ if(mouse_x > back_button_x && mouse_x < back_button_w
         show_debug_message("BACK");
         grid_choose_option = 0;
         menu_shop = 0;
-        grid_selected = 0;
     }
 }
+
 
 
